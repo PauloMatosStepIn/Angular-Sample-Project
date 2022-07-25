@@ -1,0 +1,15 @@
+<!-- <h6>cursos-lista component</h6> -->
+<!-- <app-cursos-item
+  *ngFor="let itemCurso of cursos"
+  [curso]="itemCurso"
+  ** Vamos usar Services em vez de EventEmiter **
+  (madeFavorite)="makeItemFavorite($event)" 
+  >Acções:
+</app-cursos-item> -->
+
+<div>
+  <h3>{{tituloLista}}</h3>
+<app-cursos-item *ngFor="let itemCurso of cursos" [curso]="itemCurso"
+  >Acções:
+</app-cursos-item>
+</div>

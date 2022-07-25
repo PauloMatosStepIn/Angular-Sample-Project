@@ -1,0 +1,19 @@
+<!-- <h6 style="margin:-20px;">(cursos-item component)</h6> -->
+
+<article class="course presencial">
+  <div class="card">
+    <img class="responsive-img" [src]="curso.thumbnail" />
+    <div class="card-block">
+      <time class="card-date">{{ curso.data }}</time>
+      <h4 class="card-title"><a routerLink="/curso/{{ curso.id }}">{{ curso.nome }}</a></h4>
+      <p class="card-text">
+        {{ curso.cargaHoraria }}h de curso - {{ curso.categoria }}
+      </p>
+      <ng-content></ng-content><br />
+      <button (click)="makeFavorite()" class="btn btn-like">Favorite</button>
+      <button (click)="likeIt()" class="btn btn-like">
+        Likes {{ counter }}
+      </button>
+    </div>
+  </div>
+</article>
