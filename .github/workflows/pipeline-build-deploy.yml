@@ -27,13 +27,17 @@ jobs:
     - run: npm ci
     - run: npm run build
     
+    # copy web.config to dist dir
+    - run: cp "wwwroot/web.config" "dist/angular-first-project/web.config"
+    
     - name: List Files in Distribution Directory
-      run: ls -R ./dist
+      run: ls -R ./dist/angular-first-project
 
     - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        ftp-server: "${{ secrets.FTP_SERVER }}"
-        ftp-username: "${{ secrets.FTP_USER }}"
-        ftp-password: "${{ secrets.FTP_PASSWORD }}"
-        local-dir: "dist/"
+        server: "${{ secrets.FTP_SERVER }}"
+        username: "${{ secrets.FTP_USER }}"
+        password: "${{ secrets.FTP_PASSWORD }}"
+        local-dir: "dist/angular-first-project/"
+        server-dir: "/"
