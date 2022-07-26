@@ -28,7 +28,7 @@ jobs:
     - run: npm run build
     
     # copy web.config to dist dir
-    - run: cp "wwwroot/." "dist/angular-first-project/."
+    - run: cp "wwwroot/web.config" "dist/angular-first-project/web.config"
     
     - name: List Files in Distribution Directory
       run: ls -R ./dist/angular-first-project
