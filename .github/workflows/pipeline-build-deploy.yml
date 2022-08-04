@@ -25,7 +25,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build:prod
+    - run: npm run build
     
     # copy web.config to dist dir
     - run: cp "wwwroot/web.config" "dist/angular-first-project/web.config"
