@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --aot --optimization && node ./index-minifier.js",
+    "build:prod": "ng build && node ./index-minifier.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
